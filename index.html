@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional GST Reconciliation Tool by Ebin Michael</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>GST Reconciliation Tool</h1>
+        
+        <!-- --- UPDATED: Creator Details moved to the top --- -->
+        <div class="creator-section">
+            <div class="creator-details">
+                <p><strong>Tool Created & Developed by Ebin Michael</strong></p>
+                <p>For support, feature requests, or collaboration.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://ebinmichael.in/" target="_blank" class="website-btn">My Website</a>
+                <a href="mailto:connect@ebinmichael.in" class="email-btn">Contact via Email</a>
+                <a href="https://www.linkedin.com/in/ebinmichael/" target="_blank" class="linkedin-btn">Connect on LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="instructions-link"><a href="instructions.html" target="_blank">How to use this tool? (Opens in new tab)</a></div>
+        
+        <!-- Main tool content -->
+        <div class="upload-section">
+            <div class="upload-box">
+                <label for="gstr2b-file">Upload GSTR-2B (Excel/.xlsx)</label>
+                <input type="file" id="gstr2b-file" accept=".xlsx, .xls">
+                <a href="Template/GSTR2B_Template.xlsx" class="template-link" download>Download GSTR-2B Template</a>
+            </div>
+            <div class="upload-box">
+                <label for="purchase-file">Upload Purchase Register (Excel/.xlsx)</label>
+                <input type="file" id="purchase-file" accept=".xlsx, .xls">
+                <a href="Template/Purchase_Register_Template.xlsx" class="template-link" download>Download Purchase Register Template</a>
+            </div>
+        </div>
+
+        <div class="disclaimer-section">
+            <h3>Disclaimer & User Awareness</h3>
+            <p>
+                This tool is provided as a utility to assist with GST data reconciliation. The results are generated based solely on the data you provide and are for preliminary comparison only. Users are <strong>solely responsible</strong> for independently verifying all results with official records before taking any financial or legal action. The developer assumes no liability for any inaccuracies or losses resulting from the use of this tool.
+            </p>
+            <div class="consent-check">
+                <input type="checkbox" id="consent-checkbox" onchange="toggleReconcileButton()">
+                <label for="consent-checkbox">I have read, understood, and agree to these terms.</label>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="reconcile-btn" onclick="reconcile()" disabled>Reconcile Invoices</button>
+        </div>
+
+        <div id="results-container" style="display:none;">
+            <h2>Reconciliation Summary</h2>
+            <div class="summary-section">
+                <div class="summary-card matched"><span id="matched-count">0</span><br>Matched</div>
+                <div class="summary-card mismatched"><span id="mismatched-count">0</span><br>Mismatched</div>
+                <div class="summary-card only-purchase"><span id="only-purchase-count">0</span><br>In Purchase Only</div>
+                <div class="summary-card only-2b"><span id="only-2b-count">0</span><br>In GSTR-2B Only</div>
+            </div>
+            <div class="controls"><button class="export-button" onclick="exportAllToExcel()">Export All to Excel</button></div>
+            <div class="results-section">
+                <h3>Matched Invoices</h3>
+                <div style="overflow-x:auto;"><table id="matched-table"><thead><tr><th>Supplier GSTIN</th><th>Invoice No.</th><th>Invoice Date</th><th>Invoice Value</th><th>Taxable Value</th><th>IGST</th><th>CGST</th><th>SGST</th></tr></thead><tbody></tbody></table></div>
+                <h3>Mismatched Invoices</h3>
+                <div style="overflow-x:auto;"><table id="mismatched-table"><thead><tr><th>Supplier GSTIN</th><th>Invoice No.</th><th>Details</th><th>GSTR-2B Data</th><th>Purchase Register Data</th></tr></thead><tbody></tbody></table></div>
+                <h3>Invoices in Purchase Register Only (Missing in GSTR-2B)</h3>
+                <div style="overflow-x:auto;"><table id="only-purchase-table"><thead><tr><th>Supplier GSTIN</th><th>Invoice No.</th><th>Invoice Date</th><th>Invoice Value</th><th>Taxable Value</th><th>IGST</th><th>CGST</th><th>SGST</th></tr></thead><tbody></tbody></table></div>
+                <h3>Invoices in GSTR-2B Only (Missing in Purchase Register)</h3>
+                <div style="overflow-x:auto;"><table id="only-2b-table"><thead><tr><th>Supplier GSTIN</th><th>Invoice No.</th><th>Invoice Date</th><th>Invoice Value</th><th>Taxable Value</th><th>IGST</th><th>CGST</th><th>SGST</th></tr></thead><tbody></tbody></table></div>
+            </div>
+        </div>
+
+        <!-- REMOVED: Footer is no longer here -->
+    </div>
+
+<script src="app.js" defer></script>
+</body>
+</html>

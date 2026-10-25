@@ -1,0 +1,205 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        h1, h2 {
+            color: #1a237e;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 10px; /* Reduced margin to bring creator section closer */
+        }
+        .instructions-link {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .instructions-link a {
+            color: #3f51b5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .instructions-link a:hover {
+            text-decoration: underline;
+        }
+        .upload-section {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #e8eaf6;
+            border-radius: 6px;
+        }
+        .upload-box {
+            width: 45%;
+        }
+        .upload-box label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #3f51b5;
+        }
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #c5cae9;
+            border-radius: 4px;
+        }
+        .template-link {
+            display: block;
+            font-size: 0.8em;
+            margin-top: 8px;
+            text-align: right;
+        }
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        button {
+            background-color: #3f51b5;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #303f9f;
+        }
+        button:disabled {
+            background-color: #9fa8da;
+            cursor: not-allowed;
+        }
+        button:disabled:hover {
+            background-color: #9fa8da;
+        }
+        .summary-section {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .summary-card {
+            width: 22%;
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.2em;
+        }
+        .matched { background-color: #4caf50; }
+        .mismatched { background-color: #ff9800; }
+        .only-purchase { background-color: #f44336; }
+        .only-2b { background-color: #2196f3; }
+        .results-section h3 {
+            border-bottom: 2px solid #3f51b5;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            color: #303f9f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e8eaf6;
+            font-weight: 600;
+        }
+        .mismatch-reason {
+            color: #d32f2f;
+            font-style: italic;
+        }
+        .export-button {
+            background-color: #00796b;
+        }
+        .export-button:hover {
+            background-color: #004d40;
+        }
+        
+        .disclaimer-section {
+            margin: 20px auto 30px auto;
+            padding: 20px;
+            background-color: #fffde7;
+            border: 1px solid #ffab00;
+            border-radius: 8px;
+            max-width: 95%;
+        }
+        .disclaimer-section h3 {
+            margin-top: 0;
+            text-align: center;
+            color: #e65100;
+        }
+        .disclaimer-section p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        .consent-check {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .consent-check input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+        .consent-check label {
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* --- UPDATED: Styles for the Creator Section at the TOP --- */
+        .creator-section {
+            margin-top: 0;
+            margin-bottom: 30px; /* Spacing before the next element */
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd; /* Separator line */
+            text-align: center;
+            color: #555;
+        }
+        .creator-details p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .social-links {
+            margin-top: 15px;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            margin: 5px;
+            display: inline-block;
+            transition: opacity 0.3s ease;
+        }
+        .social-links a:hover {
+            opacity: 0.85;
+        }
+        .email-btn { background-color: #d44638; }
+        .linkedin-btn { background-color: #0077b5; }
+        .website-btn { background-color: #2f4f4f; }
+
+.mismatch-reason { white-space: pre-line; }

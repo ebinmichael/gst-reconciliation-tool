@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions - GST Reconciliation Tool</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        h1, h2, h3 {
+            color: #1a237e;
+        }
+        h1 { text-align: center; }
+        .back-link {
+            display: block;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #e8eaf6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Reconciliation Tool</a>
+
+        <h1>How to Use the GST Reconciliation Tool</h1>
+
+        <p>This tool is designed to help you quickly and accurately compare your GSTR-2B statement with your internal Purchase Register to identify any discrepancies.</p>
+
+        <h2>Step 1: Prepare Your Excel Files</h2>
+        <p>
+            The accuracy of the reconciliation depends on the format of your input files. To avoid errors, it is <strong>highly recommended</strong> to use the provided templates.
+        </p>
+        <ul>
+            <li>Click the <strong>"Download GSTR-2B Template"</strong> link on the main page to get the Excel file for your GSTR-2B data.</li>
+            <li>Click the <strong>"Download Purchase Register Template"</strong> link for your internal purchase data.</li>
+            <li>Copy your data into these templates, ensuring the column headers match exactly. The tool is flexible with some common variations (e.g., <code>Invoice No.</code> and <code>Invoice Number</code> are both accepted).</li>
+        </ul>
+
+        <h2>Step 2: Upload Your Files</h2>
+        <p>
+            Once your files are ready:
+        </p>
+        <ul>
+            <li>Under the "Upload GSTR-2B" section, click "Choose File" and select your completed GSTR-2B Excel file.</li>
+            <li>Under the "Upload Purchase Register" section, click "Choose File" and select your completed Purchase Register Excel file.</li>
+        </ul>
+
+        <h2>Step 3: Run the Reconciliation</h2>
+        <p>
+            Click the large blue <strong>"Reconcile Invoices"</strong> button. The tool will process both files and display the results below.
+        </p>
+
+        <h2>Step 4: Understand the Results</h2>
+        <p>The results are categorized into four sections:</p>
+        <ul>
+            <li><strong>Matched:</strong> Invoices that exist in both GSTR-2B and your Purchase Register with matching GSTIN, Invoice Number, and values within the tolerance limit.</li>
+            <li><strong>Mismatched:</strong> Invoices where the GSTIN and Invoice Number match, but there are differences in the Invoice Value or Taxable Value. The specific reasons for the mismatch are highlighted.</li>
+            <li><strong>In Purchase Register Only:</strong> Invoices that are recorded in your books but are not present in your GSTR-2B. This could indicate that the supplier has not filed their returns correctly.</li>
+            <li><strong>In GSTR-2B Only:</strong> Invoices that are present in GSTR-2B but are missing from your Purchase Register. This could be due to invoices you have not yet accounted for.</li>
+        </ul>
+
+        <h2>Step 5: Export the Report</h2>
+        <p>
+            After reviewing the results on the screen, you can download a complete report. Click the green <strong>"Export All to Excel"</strong> button. This will generate a single Excel file named <code>GST_Reconciliation_Report.xlsx</code> with each of the four result categories in a separate sheet for your records and further analysis.
+        </p>
+    </div>
+
+</body>
+</html>
